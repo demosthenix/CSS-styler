@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Display from './components/Display';
+import StyleSetting from './components/StyleSetting'
+import { useRef } from 'react';
 function App() {
+  
+  const box = useRef();
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container flex alce juce'>
+        <div className='main-box'>
+          <Display ref={box}/>
+          <StyleSetting element={box}/>
+        </div>
+      </div>
     </div>
   );
 }
