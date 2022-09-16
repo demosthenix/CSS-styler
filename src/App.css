@@ -50,7 +50,6 @@
   display: grid;
   grid-template-columns: 10rem 1fr 20px;
   align-items: center;
-  justify-content: start;
   margin: 0.625rem;
 }
 .input-field {
