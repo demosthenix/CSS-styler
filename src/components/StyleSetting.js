@@ -5,6 +5,8 @@ export default function StyleSetting({ element }) {
   const [styles, setStyles] = useState({});
 
   useEffect(() => {
+    console.log(styles)
+    element.current.style = {backgroundColor: "aquamarine"}
     for (let property in styles) {
       //   console.log(element);
       element.current.style[property] = styles[property];

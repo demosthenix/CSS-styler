@@ -52,6 +52,15 @@
   align-items: center;
   margin: 0.625rem;
 }
+
+.style-display {
+  display: grid;
+  align-items: center;
+  margin: 0.625rem;
+  grid-gap: 0.7rem;
+  grid-template-columns: 10rem 1fr 20px 20px;
+}
+
 .input-field {
   margin: 0px 0.425rem;
   height: 0.675rem;

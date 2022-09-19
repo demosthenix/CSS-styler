@@ -22,13 +22,20 @@ export default function Input({ styles, setStyles }) {
     // });
   };
 
+  const handleDelete = (prop) => {
+    setStyles(newStyles => {
+      delete newStyles[prop];
+      return {...newStyles}
+    })
+  }
+
   return (
     <>
       <div className="style-input">
         <StyleInput setStyles={setStyles} />
       </div>
       {currentStyles.map((style, index) => (
-        <div className="style-input" key={index}>
+        <div className={style.editable ? "style-input" : "style-display"} key={index}>
           {style.editable ? (
             <>
               <StyleInput
@@ -58,9 +65,13 @@ export default function Input({ styles, setStyles }) {
               >
                 {style.value}
               </span>
-
+              
               <button className="btn" onClick={() => handleEditable(index)}>
                 ✏️
+              </button>
+
+              <button className="btn" onClick={() => handleDelete(style.property)}>
+                ❌
               </button>
             </>
           )}
